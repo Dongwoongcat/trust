@@ -1,0 +1,35 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+
+    {{ if player.id_in_group == 1 }}
+        <p>
+            You chose to send participant B .
+            Participant B returned .
+        </p>
+        <p>
+            You were initially endowed with ,
+            chose to send ,
+            received 
+            thus you now have:
+   
+        </p>
+    {{ else }}
+        <p>
+            Participant A sent you 
+            They were tripled so you received 
+            You chose to return
+        </p>
+        <p>
+            You received
+            chose to return 
+            thus you now have:
+           
+        </p>
+        .
+    {{ endif }}
+
+    <p>{{ next_button }}</p>
+
+    {{ include Constants.instructions_template }}
+
+{{ endblock }}
