@@ -1,8 +1,11 @@
 {{ block title }}Tax Response{{ endblock }}
 {{ block content }}
     <p>
-        You runs a multinational company{{player.role}}.
-        Country A set corporate tax rate at 
+        You runs a multinational company in country {{player.location}} now.
+    </p>
+    <p>
+        Each country's corporate tax rate(%): Country_A: {{tax_a}}%, Country_B: {{tax_b}}%, Country_C: {{tax_c}}%
+    </p>
         In which country will you run your business?
     </p>
 

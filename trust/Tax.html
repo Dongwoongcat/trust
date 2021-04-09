@@ -2,7 +2,13 @@
 {{ block content }}
 
     <p>
-    You are {{player.role}}. How much will you set corporate tax rate this round?
+    You are {{player.role}}. 
+    </p>
+    <p>
+    In last round, each countries set corporate tax as A: {{tax_a_old}}%, B: {{tax_b_old}}%, and C: {{tax_c_old}}%
+    </p>
+    How much will you set corporate tax rate in this round {{player.round_number}}?
+    
     </p>
 
     {{ formfields }}

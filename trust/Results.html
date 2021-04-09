@@ -1,31 +1,27 @@
 {{ block title }}Results{{ endblock }}
 {{ block content }}
 
-    {{ if player.id_in_group == 1 }}
+    {{ if player.role == Constants.governmentA_role or player.role == Constants.governmentB_role or player.role == Constants.governmentC_role }}
         <p>
-            You chose to send participant B .
-            Participant B returned .
+            You set corporate tax rate at {{player.tax_rate}}.
         </p>
         <p>
-            You were initially endowed with ,
-            chose to send ,
-            received 
-            thus you now have:
+            Your tax revenue this round: {{player.tax_revenue}}
    
         </p>
     {{ else }}
         <p>
-            Participant A sent you 
-            They were tripled so you received 
-            You chose to return
+            You run business in {{player.place}}
         </p>
-        <p>
-            You received
-            chose to return 
-            thus you now have:
-           
-        </p>
-        .
+        {{ if player.place == player.location }}
+            <p>
+                Your profit this round: 1000*(1-tax rate) = {{player.profit}}
+            </p>
+        {{else}}
+	    <p>
+		Your profit this round: 1000*(1-tax rate)-moving cost = {{player.profit}}
+	    </p>
+	{{endif}}
     {{ endif }}
 
     <p>{{ next_button }}</p>

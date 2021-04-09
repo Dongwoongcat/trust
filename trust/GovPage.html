@@ -1,0 +1,9 @@
+{{ block title }}Role{{ endblock }}
+{{ block content }}
+    <p>
+    You are a {{player.role}}
+    {{ include Constants.instructions_template }}
+
+    {{ next_button }}
+
+{{ endblock }}
